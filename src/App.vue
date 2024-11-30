@@ -1,8 +1,8 @@
 <template>
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <Page pageName="Developer" url="https://ac2-dev.ictech.dev" />
-    <Page pageName="Staging" url="https://ac2-staging.ictech.dev" />
-    <Page pageName="Production" url="https://ac2-prod.ictech.dev" />
+    <!-- <Page pageName="Staging" url="https://ac2-staging.ictech.dev" />
+    <Page pageName="Production" url="https://ac2-prod.ictech.dev" /> -->
   </div>
 </template>
 

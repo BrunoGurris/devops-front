@@ -25,16 +25,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr v-for="(student, n) in students" :key="n">
           <th scope="row">1</th>
-          <td>Mark</td>
-          <td>email@email.com</td>
-          <td><button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></button></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>email@email.com</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.email }}</td>
           <td><button type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></button></td>
         </tr>
       </tbody>
@@ -43,13 +37,38 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
   name: 'App',
 
+  data() {
+    return {
+      students: []
+    }
+  },
+
   props: ['pageName', 'url'],
 
-  components: {
+  methods: {
+    async getAllStudents() {
+      await axios.get(`${this.url}/students`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:8080'
+        }
+      })
+        .then(function (response) {
+          this.students = response
+        })
+        .catch(function () {
+          alert('Ocorreu um erro')
+        })
+    }
+  },
+
+  mounted() {
+    this.getAllStudents()
   }
 }
 </script>

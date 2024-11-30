@@ -1,8 +1,8 @@
 <template>
   <div class="row">
-    <Page pageName="Developer" />
-    <Page pageName="Staging" />
-    <Page pageName="Production" />
+    <Page pageName="Developer" url="https://ac2-dev.ictech.dev" />
+    <Page pageName="Staging" url="https://ac2-staging.ictech.dev" />
+    <Page pageName="Production" url="https://ac2-prod.ictech.dev" />
   </div>
 </template>
 

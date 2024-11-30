@@ -1,8 +1,8 @@
 <template>
   <div class="row">
-    <Page />
-    <Page />
-    <Page />
+    <Page pageName="Developer" />
+    <Page pageName="Staging" />
+    <Page pageName="Production" />
   </div>
 </template>
 

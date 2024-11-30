@@ -1,5 +1,7 @@
 <template>
   <div class="col-12 col-lg-4 border rounded p-3">
+    <h4 class="text-center mb-4">{{ pageName }}</h4>
+
     <div class="mb-2">
       <label class="form-label m-0">Nome:</label>
       <input type="text" class="form-control">
@@ -44,6 +46,9 @@
 
 export default {
   name: 'App',
+
+  props: ['pageName', 'url'],
+
   components: {
   }
 }
